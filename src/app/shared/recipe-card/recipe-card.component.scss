@@ -1,0 +1,44 @@
+.card-container {
+  display: block;
+  float: left;
+  width: 23%;
+  margin-left: 1.5%;
+  margin-bottom: 20px;
+
+  .card {
+    --bs-card-border-radius: 2rem;
+  }
+
+  .card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+  }
+
+  .card-body {
+    .card-title {
+      font-weight: 900;
+      font-size: 20px;
+      color: #8e210b;
+      margin-bottom: 5px;
+    }
+
+    .card-text {
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    a.btn.btn-primary {
+      background: #8e210b;
+      border: none;
+      margin: auto;
+      padding: 8px, 35px;
+    }
+  }
+
+}
+
+

@@ -32,5 +32,23 @@ html, body { height: 100%; }
   }
 }
 
+.testoEvidenziato {
+  background-color: yellow;
+  width: 400px;
+}
+
+footer {
+  background-color: rgb(110, 51, 51);
+  // text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 35px!important;
+  color: #8e210b !important;
+  font-family: "Homemade Apple", cursive!important;
+}
+
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
