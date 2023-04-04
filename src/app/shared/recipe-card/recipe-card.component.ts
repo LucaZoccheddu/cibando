@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
 
 @Component({
@@ -10,4 +10,11 @@ export class RecipeCardComponent {
 
   @Input() recipes: Recipe[];
 
+  @Input() pag: string;
+
+  @Output() messaggio = new EventEmitter;
+
+  inviaTitolo(titolo: string) {
+    this.messaggio.emit(titolo);
+  }
 }

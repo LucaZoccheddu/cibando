@@ -1,0 +1,7 @@
+<div id="main-container">
+  <h2>Le nostre ricette</h2>
+  <div class="no-ric-tit">
+    <h3 *ngIf="titoloRicetta" class="ric-tit">{{titoloRicetta}}</h3>
+  </div>
+  <app-recipe-card [recipes]="ricette" (messaggio)="riceviMessaggio($event)"></app-recipe-card>
+</div>

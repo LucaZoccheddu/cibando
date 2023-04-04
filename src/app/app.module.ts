@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialExampleModule } from 'src/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PasswordModule } from 'primeng/password';
+import { DividerModule } from 'primeng/divider';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
@@ -14,6 +16,9 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component';
 import { DetailComponent } from './components/recipes/detail/detail.component';
+import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
+import { RegistrazioneComponent } from './shared/user/registrazione/registrazione.component';
+import { UserComponent } from './shared/user/user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,10 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
     HeaderComponent,
     FooterComponent,
     RecipeCardComponent,
-    DetailComponent
+    DetailComponent,
+    RecipesListComponent,
+    RegistrazioneComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,10 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
     BrowserAnimationsModule,
     MaterialExampleModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    PasswordModule,
+    DividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

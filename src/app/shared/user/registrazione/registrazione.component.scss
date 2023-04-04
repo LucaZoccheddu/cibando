@@ -1,0 +1,59 @@
+@import "../../../../styles/colors.scss";
+
+.col-xl-7 {
+  width: 50%;
+}
+
+.col-xl-5 {
+  width: 50%;
+  padding-top: 50px;
+}
+
+.card-body {
+  padding: 0!important;
+}
+
+.img-fluid {
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+.h-100 {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.btn {
+  background: $primary-color-1;
+  border-color: $primary-color-1;
+}
+
+.mat-icon {
+  margin-bottom: 30px;
+  margin-right: 4px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+input.ng-valid.ng-touched {
+  border: 1px solid green;
+}
+
+.help {
+  color: red;
+  margin-top: -13px;
+}
+
+.form-check {
+  flex-direction: column;
+  padding-left: 90px;
+
+  .form-check-label {
+    margin-top: -16px;
+    margin-bottom: 10px;
+  }
+}
+
+

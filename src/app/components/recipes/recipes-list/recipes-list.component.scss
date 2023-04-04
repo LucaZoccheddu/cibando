@@ -1,0 +1,18 @@
+@import "../../../../styles/colors.scss";
+
+#main-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.ric-tit {
+  font-weight: 900;
+  font-size: 20px;
+  color: $primary-color-1;
+  margin-bottom: 20px;
+}
+
+.no-ric-tit {
+  height: 40px;
+  margin-top: -15px;
+}
