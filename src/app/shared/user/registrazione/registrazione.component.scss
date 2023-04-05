@@ -56,4 +56,34 @@ input.ng-valid.ng-touched {
   }
 }
 
+.modal-content {
+  border: 5px $primary-color-1;
 
+
+}
+
+.modal-footer {
+  background-color: $primary-color-1!important;
+
+  button.btn {
+    background: white!important;
+}
+}
+
+.modal-header {
+  background-color: $primary-color-1;
+
+  h3 {
+    color: $secondary-color-1;
+    align-content: center;
+    display: contents;
+    font-size: large;
+  }
+
+  button.btn-close {
+    /* color: white; */
+    background-color: white;
+    opacity: 1;
+}
+
+}
