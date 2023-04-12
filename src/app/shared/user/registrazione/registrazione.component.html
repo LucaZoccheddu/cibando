@@ -90,7 +90,7 @@
                     <div class="form-outline flex-fill mb-0">
                       <div class="d-flex align-items-center">
                         <mat-icon>person</mat-icon>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="scrivi il tuo nome" formControlName="name"/>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="scrivi il tuo nome" formControlName="name" appChangeColor/>
                         <label class="form-label" for="form3Example1c">Il tuo nome</label>
                       </div>
                       <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo nome è obbligatorio</p>

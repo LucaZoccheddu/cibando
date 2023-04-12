@@ -1,0 +1,71 @@
+@import "../../../../styles/colors.scss";
+
+.login-container {
+  margin: 30px 35%;
+  border: 1px solid $primary-color-1;
+  border-radius: 8px;
+  height: 380px;
+}
+
+.items-container {
+  padding: 20px;
+
+  .button-container {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 16px;
+
+    button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      background-color: $primary-color-1;
+      border: none;
+      font-size: 19px;
+      color: $secondary-color-1;
+  }
+}
+
+}
+
+.accedi {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-container {
+  margin-bottom: 30px;
+  display: flex;
+
+  .input-label {
+    width: 20%;
+    padding-top: 8px;
+  }
+
+  .input {
+    width: 80%;
+  }
+}
+
+.input-pass .p-password .p-inputtext {
+  width: 100%!important;
+}
+
+.form-control {
+  border-radius: 8px;
+}
+
+.page-cont {
+  height: 700px;
+}
+
+.registrati-container {
+  text-align: center;
+}
+
+p-password {
+  width: 100%!important;
+}
+
+.p-password.p-component.p-inputwrapper.p-input-icon-right {
+  width: 100%!important;
+}

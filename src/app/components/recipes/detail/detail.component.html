@@ -2,7 +2,9 @@
 <div class="image" [ngStyle]="{'background-image': 'url(' + ricetta.image + ')'}"></div>
 <div class="container-fluid">
   <h2 class="titolo">{{ricetta.title}}</h2>
-  <p class="det-description">{{ricetta.description}}</p>
+  <p class="det-description">
+    <span [innerHTML]="ricetta.description"></span>
+  </p>
 <div class="row">
   <strong>Difficoltà:</strong>
   <img [src]="percorsoStelline + ricetta.difficulty + '.png'" class="difficoltà" alt="">
@@ -12,7 +14,7 @@
 
   <p class="diff">Difficoltà:</p>
   <p class="diff-num">{{ricetta.difficulty}}</p>
-  <p class="det-data">Ricetta pubblicata il {{ricetta.date}}</p>
+  <p class="det-data">Ricetta pubblicata il {{ricetta.createdAt | date: 'short'}}</p>
 </div>
 </div>
 

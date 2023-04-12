@@ -1,0 +1,116 @@
+<section class="vh-100 bg-image">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <!-- <ng-template *ngIf="!image" https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp> -->
+          <img src="../../../../assets/images/new-recipe.jpg"
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo">
+          <!-- </ng-template> -->
+          <div class="card-body p-4 p-md-5">
+            <!-- <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Aggiungi una nuova ricetta</h3> -->
+            <h2 >Aggiungi una nuova ricetta</h2>
+            <form class="px-md-2" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example1q">Titolo ricetta</label>
+                <input type="text" id="form3Example1q" class="form-control" placeholder="Inserisci il titolo della ricetta" formControlName="title"/>
+                <p class="help is-danger" *ngIf="form.controls.title.hasError('required') &&form.get('title').touched">Il campo titolo è obbligatorio</p>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example1q">Immagine (collegamento)</label>
+                <input type="text" id="form3Example1q" class="form-control" placeholder="Inserisci il link dell'immagine" formControlName="image"/>
+                <p class="help is-danger" *ngIf="form.controls.image.hasError('required') &&form.get('image').touched">Il collegamento dell'immagine è obbligatorio</p>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example1q">Descrizione</label>
+                <ckeditor class="descrizione-ricetta" [editor]="Editor" [config]="editorConfig" formControlName="description"></ckeditor>
+                <p class="help is-danger" *ngIf="form.controls.description.hasError('required') &&form.get('description').touched">Il campo descrizione è obbligatorio</p>
+              </div>
+
+              <div class="mb-4">
+                <label for="select">Seleziona il livello di difficoltà della ricetta: </label>
+                <select class="select" id="select" formControlName="difficulty">
+                  <option value="">Seleziona...</option>
+                  <option value="1">Molto facile</option>
+                  <option value="2">Facile</option>
+                  <option value="3">Media</option>
+                  <option value="4">Difficile</option>
+                  <option value="5">Molto difficile</option>
+                </select>
+                <p class="help is-danger" *ngIf="form.controls.difficulty.hasError('required') &&form.get('difficulty').touched">Il campo difficoltà è obbligatorio</p>
+
+              </div>
+
+              <div class="container-publish">
+                <label for="publish" class="publish">Rendi pubblica la ricetta</label>
+                <input type="checkbox" id="publish" formControlName="published">
+                <!-- <p-selectButton [options]="difficulty" [(ngModel)]="value" optionLabel="label" optionValue="value"></p-selectButton> -->
+              </div>
+              <div class="button-container">
+                <button type="submit" [disabled]="!form.valid">Aggiungi</button>
+              </div>
+
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template let-modal [ngIf]="newRecipe">
+  <div>
+    <div class="modal-header">
+      <h3>Ricetta aggiunta</h3>
+      <button type="button" class="btn-close" aria-label="close" (click)="onClose()"></button>
+    </div>
+
+    <div class="modal-body">
+      <p>Titolo della ricetta: {{newRecipe.title}}</p>
+      <p [innerHTML]="newRecipe.description">Descrizione della ricetta: </p>
+      <p>Difficoltà della ricetta: {{newRecipe.difficulty}}</p>
+
+      <p>Data di creazione della ricetta: {{newRecipe.createdAt | date}}</p>
+      <p>{{newRecipe.published}}</p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn" (click)="onClose()">Chiudi</button>
+      <button type="button" class="btn" (click)="onNewRecipe()" ngbAutoFocus>Nuova Ricetta</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="newRecipe">
+  <div id="container-utente">
+    <div id="dati-utente" class="d-block">
+      <div class="d-block">
+        <h2>Ecco il riepilogo della ricetta inserita:</h2>
+      </div>
+        <div class="d-flex">
+          <div class="d-block" style="width: 50%">
+            <ul>
+              <li>{{newRecipe.title}}</li>
+              <li [innerHTML]="newRecipe.description"></li>
+              <li><img class="stelline-newrecipe" [src]="percorsoStelline + newRecipe.difficulty + '.png'" alt=""></li>
+            </ul>
+          </div>
+          <div class="d-block" style="width: 50%">
+            <img class="image-newrecipe" [src]="newRecipe.image" alt="">
+          </div>
+        </div>
+        <div class="close-button">
+          <button class="btn btn-primary btn-lg" (click)="onClose()">Chiudi</button>
+          <button class="btn btn-primary btn-lg" (click)="onClose()">Nuova ricetta</button>
+        </div>
+
+    </div>
+  </div>
+</ng-template>
+

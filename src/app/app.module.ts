@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { ToastModule } from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
@@ -20,6 +25,11 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrazioneComponent } from './shared/user/registrazione/registrazione.component';
 import { UserComponent } from './shared/user/user.component';
+import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.component';
+import { ChangeColorDirective } from './directives/change-color.directive';
+import { EsempioCombineComponent } from './components/esempio-combine/esempio-combine.component';
+import { LoginComponent } from './shared/user/login/login.component';
+import { ProfileComponent } from './shared/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +43,12 @@ import { UserComponent } from './shared/user/user.component';
     DetailComponent,
     RecipesListComponent,
     RegistrazioneComponent,
-    UserComponent
+    UserComponent,
+    AddRecipeComponent,
+    ChangeColorDirective,
+    EsempioCombineComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +61,10 @@ import { UserComponent } from './shared/user/user.component';
     PasswordModule,
     DividerModule,
     PaginatorModule,
+    HttpClientModule,
+    SelectButtonModule,
+    ToastModule,
+    CKEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+import { take } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
@@ -28,7 +29,10 @@ export class HomeComponent implements OnInit{
   }
 
   prendiDatiUtente() {
-    this.userService.datiUtente.subscribe((res: any) => {
+    this.userService.datiUtente.pipe(
+      take(1)
+    )
+    .subscribe((res: any) => {
       // localStorage.setItem('name', res.name);
       // localStorage.setItem('email', res.email);
       this.name = res.name;

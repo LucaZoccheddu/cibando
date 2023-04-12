@@ -1,0 +1,29 @@
+@import "../../../styles/colors.scss";
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: 140px 0;
+}
+
+.results-container {
+    // padding-bottom: 533px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    min-height: 703px;
+
+  .list-container{
+    display: block;
+
+    h3 {
+      font-size: 25px!important;
+      font-weight: 800!important;
+      color: $primary-color-1!important;
+    }
+
+    li {
+      list-style-type: none;
+    }
+  }
+}

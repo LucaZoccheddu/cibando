@@ -13,3 +13,23 @@
 .navbar-brand {
   margin-right: 50px;
 }
+
+li.nav-item.user {
+  margin-left: 60px;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 0px 20px;
+}
+
+.esci {
+  display: inline-block;
+}
+
+.name {
+  color: white;
+}
+
+li.nav-item.user {
+  display: flex;
+  align-items: baseline;
+}
