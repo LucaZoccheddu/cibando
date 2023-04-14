@@ -33,6 +33,16 @@ export class AuthService {
     return JSON.parse(localStorage.getItem('user')) != null;
   }
 
+  isAdmin(): boolean {
+    const user = localStorage.getItem('user');
+    const email = (JSON.parse(user)).email;
+    let ruolo: string;
+    this.userService.getUser(email).subscribe({
+      next: res => ruolo = res.role,
+    })
+    return ruolo === 'admin';
+  }
+
   logout(): void {
     localStorage.removeItem('user');
     this.userService.userRole.next('');

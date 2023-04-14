@@ -22,18 +22,27 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="ricette"><mat-icon> restaurant</mat-icon>Ricette</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="authService.isLogged()">
             <a class="nav-link" routerLink="ricette/aggiungi"><mat-icon>add</mat-icon>Nuova Ricetta</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" ><mat-icon>alternate_email</mat-icon>Contatti</a>
           </li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse reverse" id="navbarNav">
+        <ul class="prof-search">
+          <li class="nav-item search">
+            <input type="text" class="nav-link" placeholder="Cerca" [(ngModel)]="ricerca">
+            <!-- <button (click)="onCerca()"></button> -->
+            <a routerLink="/ricette/cerca"><mat-icon class="cerca" (click)="onCerca()">search</mat-icon></a>
+          </li>
           <li class="nav-item user" *ngIf="!authService.isLogged()">
-            <a class="nav-link" routerLink="login"><mat-icon>person</mat-icon>Accedi</a>
+            <a class="nav-link" routerLink="user/login"><mat-icon>person</mat-icon>Accedi</a>
           </li>
           <li class="nav-item user" *ngIf="authService.isLogged()">
             <span class="name"><mat-icon>person</mat-icon>Ciao {{user.name}}</span>
-            <a class="nav-link" routerLink="/profilo"> - PROFILO</a>
+            <a class="nav-link profilo" routerLink="user/profilo"> - PROFILO</a>
             <a class="nav-link esci" (click)="logout()">- ESCI <mat-icon>exit_to_app</mat-icon></a>
           </li>
         </ul>

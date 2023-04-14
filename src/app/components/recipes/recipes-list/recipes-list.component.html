@@ -3,5 +3,5 @@
   <div class="no-ric-tit">
     <h3 *ngIf="titoloRicetta" class="ric-tit">{{titoloRicetta}}</h3>
   </div>
-  <app-recipe-card (messaggio)="riceviMessaggio($event)"></app-recipe-card>
+  <app-recipe-card [pag]="'ricette'" (messaggio)="riceviMessaggio($event)"></app-recipe-card>
 </div>

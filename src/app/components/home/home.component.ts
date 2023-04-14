@@ -68,4 +68,5 @@ export class HomeComponent implements OnInit{
     this.evidenziato = !this.evidenziato;
   }
 
+
 }

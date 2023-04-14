@@ -19,6 +19,16 @@ li.nav-item.user {
   border: 1px solid white;
   border-radius: 8px;
   padding: 0px 20px;
+  display: flex;
+  align-items: center;
+}
+
+li.nav-item.search {
+  margin-left: 60px;
+  border-radius: 8px;
+  padding: 0px 20px;
+  display: flex;
+  align-items: baseline;
 }
 
 .esci {
@@ -29,7 +39,36 @@ li.nav-item.user {
   color: white;
 }
 
-li.nav-item.user {
+.reverse {
+  flex-direction: row-reverse;
+}
+
+ul.prof-search {
   display: flex;
-  align-items: baseline;
+  margin-bottom: 0!important;
+}
+
+.cerca {
+  margin-left: 12px;
+  color: white;
+}
+
+input.nav-link {
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  padding-left: 12px;
+  outline: none;
+}
+
+.profilo {
+  margin-top: 5px;
+  margin-left: 4px;
+  margin-right: 4px;
+  color: white;
+}
+
+.esci {
+  color: white;
+  cursor: pointer;
 }
