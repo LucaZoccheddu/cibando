@@ -31,7 +31,7 @@
                 <p class="help is-danger" *ngIf="form.controls.description.hasError('required') &&form.get('description').touched">Il campo descrizione è obbligatorio</p>
               </div>
 
-              <div class="mb-4">
+              <div class="mb-4 difficulty">
                 <label for="select">Seleziona il livello di difficoltà della ricetta: </label>
                 <select class="select" id="select" formControlName="difficulty">
                   <option value="">Seleziona...</option>
@@ -64,7 +64,7 @@
   </div>
 </section>
 
-<ng-template let-modal [ngIf]="newRecipe">
+<!-- <ng-template let-modal [ngIf]="newRecipe">
   <div>
     <div class="modal-header">
       <h3>Ricetta aggiunta</h3>
@@ -85,7 +85,7 @@
       <button type="button" class="btn" (click)="onNewRecipe()" ngbAutoFocus>Nuova Ricetta</button>
     </div>
   </div>
-</ng-template>
+</ng-template> -->
 
 <ng-template [ngIf]="newRecipe">
   <div id="container-utente">
@@ -93,21 +93,21 @@
       <div class="d-block">
         <h2>Ecco il riepilogo della ricetta inserita:</h2>
       </div>
-        <div class="d-flex">
+        <div class="d-flex riepilogo">
           <div class="d-block" style="width: 50%">
             <ul>
-              <li>{{newRecipe.title}}</li>
-              <li [innerHTML]="newRecipe.description"></li>
-              <li><img class="stelline-newrecipe" [src]="percorsoStelline + newRecipe.difficulty + '.png'" alt=""></li>
+              <li>{{form.value.title}}</li>
+              <li [innerHTML]="form.value.description | slice: 0 : 50"></li>
+              <li><img class="stelline-newrecipe" [src]="percorsoStelline + form.value.difficulty + '.png'" alt=""></li>
             </ul>
           </div>
-          <div class="d-block" style="width: 50%">
-            <img class="image-newrecipe" [src]="newRecipe.image" alt="">
+          <div class="image-recap" style="width: 50%">
+            <img class="image-newrecipe" [src]="form.value.image" alt="">
           </div>
         </div>
         <div class="close-button">
           <button class="btn btn-primary btn-lg" (click)="onClose()">Chiudi</button>
-          <button class="btn btn-primary btn-lg" (click)="onClose()">Nuova ricetta</button>
+          <button class="btn btn-primary btn-lg" (click)="onNewRecipe()">Nuova ricetta</button>
         </div>
 
     </div>

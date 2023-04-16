@@ -29,19 +29,19 @@ export class HomeComponent implements OnInit{
   }
 
   prendiDatiUtente() {
-    this.userService.datiUtente.pipe(
-      take(1)
-    )
-    .subscribe((res: any) => {
-      // localStorage.setItem('name', res.name);
-      // localStorage.setItem('email', res.email);
-      this.name = res.name;
-      this.email = res.email;
-    });
-    // if (localStorage.getItem('name')) {
-    //   this.name = localStorage.getItem('name');
-    //   this.email = localStorage.getItem('email')
-    // }
+    // this.userService.datiUtente.pipe(
+    //   take(1)
+    // )
+    // .subscribe((res: any) => {
+    //   // localStorage.setItem('name', res.name);
+    //   // localStorage.setItem('email', res.email);
+    //   this.name = res.name;
+    //   this.email = res.email;
+    // });
+    if (localStorage.getItem('registration')) {
+      this.name = JSON.parse(localStorage.getItem('registration')).name;
+      this.email = JSON.parse(localStorage.getItem('registration')).email
+    }
   }
 
   closeModal() {
@@ -50,6 +50,7 @@ export class HomeComponent implements OnInit{
 
     this.name = '';
     this.email = '';
+    localStorage.removeItem('registration');
   }
 
   prendiRicette() {

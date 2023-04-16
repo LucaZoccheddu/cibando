@@ -31,3 +31,69 @@ svg {
   width: 60px;
   margin-right: 5px;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 30px;
+
+  .column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .icona-cibando {
+      width: 60px;
+      margin-right: 5px;
+      align-self: center;
+      margin-bottom: 8px;
+  }
+
+  .logo {
+      color: white;
+      font-size: 40px;
+      text-decoration: none;
+  }
+
+    .row-container {
+      display: flex;
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+  footer {
+    height: auto;
+
+    .footer-container {
+      flex-direction: column;
+
+      .column-container {
+        margin-bottom: 40px;
+
+        .logo {
+          align-self: center;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  footer {
+    height: auto;
+
+    .footer-container {
+      flex-direction: column;
+
+      .column-container {
+        margin-bottom: 40px;
+
+        .logo {
+          align-self: center;
+        }
+      }
+    }
+  }
+}

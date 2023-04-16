@@ -27,6 +27,7 @@
       font-size: 20px;
       color: $primary-color-1;
       margin-bottom: 5px;
+      height: 40px;
     }
 
     .card-text {
@@ -55,14 +56,14 @@
   }
 }
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media only screen and (min-width: 481px) and (max-width: 880px) {
   .card-container {
     width: 45%;
     margin-left: 3%;
   }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 881px) and (max-width: 1024px) {
   .card-container {
     width: 30%;
     margin-left: 2%;

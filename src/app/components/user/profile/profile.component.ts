@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     if(JSON.parse(localStorage.getItem('user')) != null) {
       this.user = JSON.parse(localStorage.getItem('user'));
-      this.onGetUser();
+      // this.onGetUser();
     }
   }
 

@@ -1,7 +1,7 @@
 @import "../../../../styles/colors.scss";
 
 .login-container {
-  margin: 30px 35%;
+  margin: 30px 30%;
   border: 1px solid $primary-color-1;
   border-radius: 8px;
   height: 380px;
@@ -68,4 +68,59 @@ p-password {
 
 .p-password.p-component.p-inputwrapper.p-input-icon-right {
   width: 100%!important;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+
+  .page-cont {
+    height: 640px;
+
+    .login-container {
+      margin: 30px 5%;
+    }
+  }
+
+  .form-control {
+    width: 80%!important;
+  }
+
+  .input-prime-login {
+    width: 80%!important;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .page-cont {
+    height: 640px;
+
+    .login-container {
+      margin: 30px 10%;
+    }
+  }
+
+  .form-control {
+    width: 84%!important;
+  }
+
+  .input-prime-login {
+    width: 84%!important;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .page-cont {
+    height: 640px;
+
+    .login-container {
+      margin: 30px 20%;
+    }
+  }
+
+  .form-control {
+    width: 84%!important;
+  }
+
+  .input-prime-login {
+    width: 84%!important;
+  }
 }

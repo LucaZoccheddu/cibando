@@ -15,8 +15,8 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   getRecipes(): Observable<Recipe[]> {
-    // return of (RECIPES);
-    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`)
+    return of (RECIPES);
+    // return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`)
   }
 
   // getRecipes() {
@@ -24,17 +24,19 @@ export class RecipeService {
   //   return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`)
   // }
 
-  getRecipe(id: string): Observable<Recipe> {
-    // const recipe = RECIPES.find(ricetta => ricetta._id === id);
-    // return of (recipe);
-    return this.http.get<Recipe>(`${this.apiBaseUrl}/${id}`)
+  getRecipe(id: number): Observable<Recipe> {
+    const recipe = RECIPES.find(ricetta => ricetta._id === id);
+    return of (recipe);
+    // return this.http.get<Recipe>(`${this.apiBaseUrl}/${id}`)
   }
 
-  addRecipe(recipe: any): Observable<Recipe> {
-    return this.http.post<any>(`${this.apiBaseUrl}/`, recipe)
+  addRecipe(recipe: any): Observable<Recipe[]> {
+    RECIPES.push(recipe);
+    return of (RECIPES);
+    // return this.http.post<any>(`${this.apiBaseUrl}/`, recipe)
   }
 
-  getRecipeByText(text: any) {
-    return this.http.get<any>(`${this.apiBaseUrl}/cerca/${text}`);
-  }
+  // getRecipeByText(text: any) {
+  //   return this.http.get<any>(`${this.apiBaseUrl}/cerca/${text}`);
+  // }
 }

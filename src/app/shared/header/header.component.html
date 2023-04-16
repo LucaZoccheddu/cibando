@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-red">
+  <nav class="navbar navbar-expand-xl bg-body-tertiary navbar-dark bg-red">
     <div class="container-fluid">
       <img src="../assets/images/icona-cibando.png" class="icona-cibando" routerLink="home">
       <a class="navbar-brand" routerLink="home">Cibando</a>
@@ -22,7 +22,7 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="ricette"><mat-icon> restaurant</mat-icon>Ricette</a>
           </li>
-          <li class="nav-item" *ngIf="authService.isLogged()">
+          <li class="nav-item" *ngIf="this.user.role === 'admin'">
             <a class="nav-link" routerLink="ricette/aggiungi"><mat-icon>add</mat-icon>Nuova Ricetta</a>
           </li>
           <li class="nav-item">
@@ -38,12 +38,15 @@
             <a routerLink="/ricette/cerca"><mat-icon class="cerca" (click)="onCerca()">search</mat-icon></a>
           </li>
           <li class="nav-item user" *ngIf="!authService.isLogged()">
-            <a class="nav-link" routerLink="user/login"><mat-icon>person</mat-icon>Accedi</a>
+            <a class="nav-link profilo" routerLink="user/login"><mat-icon>person</mat-icon>Accedi</a>
           </li>
           <li class="nav-item user" *ngIf="authService.isLogged()">
-            <span class="name"><mat-icon>person</mat-icon>Ciao {{user.name}}</span>
-            <a class="nav-link profilo" routerLink="user/profilo"> - PROFILO</a>
-            <a class="nav-link esci" (click)="logout()">- ESCI <mat-icon>exit_to_app</mat-icon></a>
+            <div class="profile">
+
+              <span class="name"><mat-icon>person</mat-icon>Ciao {{user.name}}</span>
+              <a class="nav-link profilo" routerLink="user/profilo"> - PROFILO</a>
+              <a class="nav-link esci" (click)="logout()">- ESCI <mat-icon>exit_to_app</mat-icon></a>
+            </div>
           </li>
         </ul>
       </div>

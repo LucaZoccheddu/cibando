@@ -21,7 +21,7 @@ export class RecipeCardComponent implements OnDestroy, OnInit{
   ricetteTotali: number;
   page = 1;
   ricettePerPagina = 4;
-  ruolo: any;
+  ruolo: string;
 
   // recipes$: Observable<Recipe[]> = this.recipeService.getRecipes().pipe(
   //   // map(response => response.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 3)),
@@ -38,11 +38,11 @@ export class RecipeCardComponent implements OnDestroy, OnInit{
 
   ngOnInit(): void {
     if (JSON.parse(localStorage.getItem('user')) != null) {
-      const email = JSON.parse(localStorage.getItem('user')).email;
-      // const email = (JSON.parse(user)).email;
-      this.userService.getUser(email).subscribe({
-        next: res => this.ruolo = res.role,
-      })
+      // const email = JSON.parse(localStorage.getItem('user')).email;
+      // this.userService.getUser(email).subscribe({
+      //   next: res => this.ruolo = res.role,
+      // })
+      this.ruolo = JSON.parse(localStorage.getItem('user')).role;
     }
     if(this.pag === 'cerca'){
       this.recipeService.ricerca.subscribe((res) => this.ricerca = res);
@@ -85,15 +85,15 @@ export class RecipeCardComponent implements OnDestroy, OnInit{
 
   ricercaRicetta (ricerca: string) {
     // this.recipeService.ricerca.subscribe((res) => this.ricerca = res);
-    this.recipeService.getRecipeByText(this.ricerca).subscribe({
-      next: (res) => {
-        this.ricette = res;
-        this.ricetteTotali = this.ricette.length;
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    })
+    // this.recipeService.getRecipeByText(this.ricerca).subscribe({
+    //   next: (res) => {
+    //     this.ricette = res;
+    //     this.ricetteTotali = this.ricette.length;
+    //   },
+    //   error: (error) => {
+    //     console.log(error);
+    //   }
+    // })
   }
 
   inviaTitolo(titolo: string) {

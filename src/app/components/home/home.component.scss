@@ -67,3 +67,36 @@ button.btn.btn-primary.btn-lg {
   margin-left: 25%;
   background-color: $primary-color-1;
 }
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+  div#dati-utente {
+    width: 90%;
+    height: 330px;
+
+    h2 {
+      font-size: 18px!important;
+  }
+}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  div#dati-utente {
+    width: 75%;
+    height: 330px;
+
+    h2 {
+      font-size: 22px!important;
+  }
+}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  div#dati-utente {
+    width: 60%;
+    height: 330px;
+
+    h2 {
+      font-size: 22px!important;
+  }
+}
+}

@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { take } from 'rxjs';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -20,6 +21,7 @@ export class RegistrazioneComponent {
     private userService: UserService,
     private router: Router,
     private modalService: NgbModal,
+    private authService: AuthService,
     ) {};
 
   form = new FormGroup({
@@ -38,6 +40,8 @@ export class RegistrazioneComponent {
         email: this.form.value.email,
         password: this.form.value.password,
       }
+      this.authService.saveStorageLogin(user)
+      this.authService.saveStorage(user)
       this.userService.aggiungiUtente(user).pipe(
         take(1)
       )
